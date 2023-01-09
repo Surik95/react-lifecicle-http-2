@@ -6,10 +6,6 @@ export default class Crud extends React.Component {
   state = { notes: [] };
 
   componentDidMount() {
-    debugger;
-    fetch("http://localhost:7777/notes/ZjM1Nzd5f", {
-      method: "DELETE",
-    });
     this.getRequest();
   }
 
@@ -19,6 +15,7 @@ export default class Crud extends React.Component {
     fetch(this.url)
       .then((response) => response.json())
       .then((result) => {
+        debugger;
         this.setState({
           notes: [...result],
         });
@@ -29,11 +26,13 @@ export default class Crud extends React.Component {
     fetch(this.url, {
       method: "POST",
       body: JSON.stringify(body),
-    }).then(this.getRequest());
+    }).then((result) => (result ? this.getRequest() : null));
   };
 
   deleteRequest = (id) => {
-    fetch(`${this.url}/${id}`, { method: "DELETE" }).then(this.getRequest());
+    fetch(`${this.url}/${id}`, { method: "DELETE" }).then((result) =>
+      result ? this.getRequest() : null
+    );
   };
 
   render() {
