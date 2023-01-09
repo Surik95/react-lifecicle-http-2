@@ -1,38 +1,93 @@
-.App {
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  box-sizing: border-box;
+}
+
+.containier {
+  padding: 15px;
+}
+
+.updateBlock {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.updateTitle {
+  margin-right: 15px;
+}
+
+.updateBtn {
+  border: 1px solid black;
+  border-radius: 50%;
+  color: green;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+.CrudTable {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.crudItem {
+  min-width: 300px;
+  padding: 30px;
+  line-height: 1.5;
+  position: relative;
+  border: 2px solid black;
+  z-index: 1;
+  margin-right: 15px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.crudDelete {
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  z-index: 2;
+  color: red;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.formNewNote {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 300px;
 }
 
-.App-link {
-  color: #61dafb;
+.formNewNote label {
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+.noteArea {
+  border: 2px solid black;
+  height: 150px;
+  vertical-align: top;
+  resize: none;
+}
+.btnForm {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0 0 0 3px;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.material-icons {
+  cursor: pointer;
 }
